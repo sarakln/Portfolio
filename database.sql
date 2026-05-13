@@ -16,22 +16,21 @@ CREATE TABLE IF NOT EXISTS `admin` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Insert Admin (Password: 12345 - Used plain text for demo purposes, should be hashed with BCRYPT/MD5 in production)
+-- Admin: sara / Password: 12345
 INSERT INTO `admin` (`username`, `password`) VALUES ('sara', '12345');
 
--- 3. PROJECTS TABLE
+-- 3. PROJECTS TABLE (Güncel Projelerinle)
 CREATE TABLE IF NOT EXISTS `projects` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(150) NOT NULL,
   `description` text NOT NULL,
   `tools` varchar(100) NOT NULL,
+  `image` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Insert Projects (Translated to English)
-INSERT INTO `projects` (`title`, `description`, `tools`) VALUES 
-('Student GPA & Ranking System', 'A desktop application featuring a user-friendly interface that calculates student grades and ranks them using data processing algorithms.', 'Python, Tkinter, Pandas'),
-('Exam Performance Data Analysis', 'A data science project that analyzes and visualizes the factors affecting student exam performance using Kaggle datasets.', 'Python, Pandas, NumPy'),
-('Dynamic Construction Progress Tracker', 'A project management tool that dynamically tracks construction progress, supported by AI-generated visual assets.', 'Python, Data Analysis, AI'),
-('Visual Classification', 'Computer Vision-based object detection project.', 'Python, YOLO'),
-('Student Management System', 'A graphical user interface developed with Pandas and Tkinter.', 'Python, Tkinter');
+-- SENİN ASIL PROJELERİN (İngilizce ve Doğru Teknik Bilgilerle)
+INSERT INTO `projects` (`title`, `description`, `tools`, `image`) VALUES 
+('Construction Progress Tracker', 'A professional management tool for tracking construction sites through dynamic data visualization and AI-generated visual assets.', 'Python, Pandas, AI Generation', 'img1.png'),
+('Exam Performance Analysis', 'A data science project that analyzes student success factors using statistical algorithms over Kaggle datasets.', 'Python, NumPy, Matplotlib', 'img2.png'),
+('PDF AI Agent (Summarizer)', 'An intelligent AI agent built to analyze complex PDF documents, generate summaries, and produce automated test questions.', 'Python, FastAPI, Crew AI', 'img3.png');
